@@ -14,6 +14,8 @@ DeMulMe is another way to demultiplex your data. It implement two algorithms wra
 
 ## Future Dev
 * ~~Full shell commands~~
+* Find a way to extract barcodes without calling QiiME package (maybe in R)
+* parallelize barcodes extraction
 * Debugging parameter to keep intermediate files
 * Shell scripts for a _all-in-one_ command
-* Find a way to parallelize (maybe in R)
+* Find a way to parallelize deMulMe (maybe in R)
