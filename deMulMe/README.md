@@ -6,7 +6,7 @@ DeMulMe is another way to demultiplex your data. It implement two algorithms wra
  
 2. A dirty python script : [deMulMe.py](https://github.com/RemiMaglione/genomicScript/blob/master/deMulMe/deMulMe.py)
 
-ABy the time you read this lines You also need a QiiME script : [extract_barcodes.py](http://qiime.org/scripts/extract_barcodes.html)
+By the time you read this lines You also need a QiiME script : [extract_barcodes.py](http://qiime.org/scripts/extract_barcodes.html)
 
 ---
 ## Update
