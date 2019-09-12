@@ -3,8 +3,10 @@
 DeMulMe is another way to demultiplex your data. It implement two algorithms wrapped together by basics shell commands:
 
 1. Sabre [https://github.com/najoshi/sabre](https://github.com/najoshi/sabre)
-
+ 
 2. A dirty python script : [deMulMe.py](https://github.com/RemiMaglione/genomicScript/blob/master/deMulMe/deMulMe.py)
+
+ABy the time you read this lines You also need a QiiME script : [extract_barcodes.py](http://qiime.org/scripts/extract_barcodes.html)
 
 ---
 ## Update
