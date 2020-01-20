@@ -11,13 +11,17 @@ By the time you read those lines You also need a QiiME script : [extract_barcode
 ---
 ## Update
 * Full shell commands --> [deMulMe_main.sh](https://github.com/RemiMaglione/genomicScript/blob/master/deMulMe/deMulMe_main.sh)
-
+* Extract barcodes without calling QiiME --> [trimMe.py](https://github.com/RemiMaglione/genomicScript/blob/master/trimMe/trimMe.py)
+* Parallelize barcodes extraction
 ---
-
+## In Progress
+* Shell scripts for a _all-in-one_ command --> [deMulMe.sh](https://github.com/RemiMaglione/genomicScript/blob/master/deMulMe/deMulMe.sh)
+* Find a way to parallelize deMulMe ~~(maybe in R)~~ in Shell
+---
 ## Future Dev
 * ~~Full shell commands~~
-* Find a way to extract barcodes without calling QiiME package (maybe in R)
-* parallelize barcodes extraction
+* ~~Find a way to extract barcodes without calling QiiME package (maybe in R)~~
+* ~~Fparallelize barcodes extraction
 * Debugging parameter to keep intermediate files
-* Shell scripts for a _all-in-one_ command
-* Find a way to parallelize deMulMe (maybe in R)
+* ~~Shell scripts for a _all-in-one_ command
+* ~~Find a way to parallelize deMulMe (maybe in R)
