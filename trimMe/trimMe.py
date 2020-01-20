@@ -18,6 +18,8 @@ parser.add_argument('-len-r1', '--barcode-length-r1', type=str, required=True,
 parser.add_argument('-len-r2', '--barcode-length-r2', type=str, required=True,
                     help='Length of your r2 barcode to extract')
 
+parser.add_argument('-o', '--output-file', type=str, required=True,
+                    help='name of your fastq output file')
 
 try:
     args = parser.parse_args()
@@ -78,7 +80,9 @@ if __name__ == '__main__':
     fqIteratorR2 = fastq_iterator(args.reverse_fq)
     lenR1=int(args.barcode_length_r1)
     lenR2=int(args.barcode_length_r2)
-    print("[Done]: building fastq iterator")
+    outfile=args.output_file
+
+    #print("[Done]: building fastq iterator")
     separator = " "
     while True:
         try:
@@ -88,8 +92,8 @@ if __name__ == '__main__':
             s1.seq = "{}{}".format(s1.seq[1:lenR1], s2.seq[1:lenR2])
             s1.qual= "0"
 
-            with open("barcodeMe.fastq", "a") as outpufile:
-                s1.write_to_file(outpufile)
+            with open(outfile, "a") as outputfile:
+                s1.write_to_file(outputfile)
 
         except:
             print("Congrat, You (probably) Extract My Barcodes !")
