@@ -67,7 +67,7 @@ fi
 
 echo "fastq r2 control OK"
 
-if [ -z "$(print - $3 | sed 's/[0-9]//g')" ];
+if ! [[ "$threadMe" =~ ^[0-9]+$ ]];
 then
 echo "For some reason you choose to not multithread me ! (You enter : $3 ...)"
 echo "Did you really think that I have been design to work on a single thread? Duh..."
