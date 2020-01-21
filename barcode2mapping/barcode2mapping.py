@@ -24,6 +24,10 @@ parser.add_argument('-f', '--format', type=str, required=True,
 parser.add_argument('-o', '--output-csv', type=str, required=True,
                     help='Name of the output .csv file')
 
+parser.add_argument('-s', '--output-suffix', type=str, required=False,
+                    help='Add a suffix to the output file')
+
+
 try:
     args = parser.parse_args()
 except:
@@ -113,14 +117,22 @@ if __name__ == '__main__':
                          ', {}{}\n'.format(line[2],
 					 barcoDict[line[0]],
                                          barcoDict[line[1]]))
-
-        elif args.format == "sabre_se":
+        
+	elif args.format == "sabre_se":
             for line in csv_open(args.input_csv):
                 #  Writing in the output while looping at the key dictionary
-                of.write('{}{}'
+                if args.output_suffix is not None:
+                    of.write('{}{}'
+                         ' {}.fastq{}\n'.format(barcoDict[line[0]],
+                                                barcoDict[line[1]],
+                                                line[2],
+                                                args.output_suffix))
+                else:
+                    of.write('{}{}'
                          ' {}.fastq\n'.format(barcoDict[line[0]],
-                                  	      barcoDict[line[1]],
-					      line[2]))
+                                              barcoDict[line[1]],
+                                              line[2]))
+
 
         elif args.format == "sabre_pe":
             for line in csv_open(args.input_csv):
