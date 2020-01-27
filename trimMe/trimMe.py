@@ -38,7 +38,7 @@ class Fastq(object):
         self.qual = qual
 
     def write_to_file(self, handle):
-        handle.write("@" + self.name + "\n")
+        handle.write(self.name + "\n")
         handle.write(self.seq + "\n")
         handle.write("+" + self.name2 + "\n")
         handle.write(self.qual + "\n")
@@ -89,12 +89,13 @@ if __name__ == '__main__':
             s1 = fqIteratorR1.__next__()
             s2 = fqIteratorR2.__next__()
 
-            s1.seq = "{}{}".format(s1.seq[1:lenR1], s2.seq[1:lenR2])
-            s1.qual= "0"
+            s1.seq = "{}{}".format(s1.seq[0:lenR1], s2.seq[0:lenR2])
+            s1.qual= "{}{}".format("I"*lenR1, "I"*lenR2)
+
 
             with open(outfile, "a") as outputfile:
                 s1.write_to_file(outputfile)
 
         except:
-            print("Congrat, You (probably) Extract My Barcodes !")
+            #print("Congrat, You (probably) Extract My Barcodes !")
             break
