@@ -111,14 +111,14 @@ def myopen(infile, mode="r"):
 if __name__ == '__main__':
     seqiHash = {}
     with open(args.input_fn, "r") as idFile:
-        print("[Start]: Building sequences-file dictionary")
+        #print("[Start]: Building sequences-file dictionary")
         while True:
             try:
                 file = idFile.readline().split()[0]
                 #print(file)
                 seqiHash.update(seqid2hash(file))
             except:
-                print("[Done]: sequences-file dictionary")
+                #print("[Done]: sequences-file dictionary")
                 break
 
     gz = args.gzip
@@ -129,7 +129,7 @@ if __name__ == '__main__':
     #print(outSuffix)
     fqIteratorR1 = fastq_iterator(args.forward_fq)
     fqIteratorR2 = fastq_iterator(args.reverse_fq)
-    print("[Done]: building fastq iterator")
+    #print("[Done]: building fastq iterator")
     separator = " "
     while True:
         try:
@@ -141,5 +141,5 @@ if __name__ == '__main__':
                         s1.write_to_file(seqFileR1)
                         s2.write_to_file(seqFileR2)
         except:
-            print("Congrat, You Demul Me !")
+            #print("Congrat, You Demul Me !")
             break
