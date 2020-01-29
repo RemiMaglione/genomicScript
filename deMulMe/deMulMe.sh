@@ -20,7 +20,7 @@ then
     echo "bc_length_r1 & r2: Fixed barcode length of your input fastq files"
     echo "barcoRef: reference file of your barcodes"
     echo "barcoRun: barcode to sample file"
-    echo "cut_file_r1 & r2: input removed barcodes fastq files [=file_r1 & r2 without their barcode]
+    echo "cut_file_r1 & r2: input removed barcodes fastq files [=file_r1 & r2 without their barcode]"
     exit 1
 fi
 
