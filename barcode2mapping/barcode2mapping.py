@@ -6,7 +6,7 @@ import sys
 
 parser = argparse.ArgumentParser(description=
                                  "Create a ready-to-use barcode file with a correct input format "
-                                 "for Qiime, Mothur, idemp, demul(java), sabre(so far)")
+                                 "for Qiime, Mothur and idemp (so far)")
 parser.add_argument('-i', '--input-csv', type=str, required=True,
                     help='Name of the input .csv file.\nMust contain: 1- The Forward primer number\n'
                          '2- The Reverse primer number, \n'
@@ -18,15 +18,13 @@ parser.add_argument('-b', '--barcode-csv', type=str, required=True,
 
 parser.add_argument('-f', '--format', type=str, required=True,
                     help='format of the output file'
-                         'supporting: [qiime, mothur, mothur_rev, idemp, idemp_rev, demul, demul_rev, sabre_se, sabre_pe]'
-                                      '"_rev" to switch output order between forward and reverse')
+                         'supporting: [qiime, mothur and idemp]')
 
 parser.add_argument('-o', '--output-csv', type=str, required=True,
                     help='Name of the output .csv file')
 
 parser.add_argument('-s', '--output-suffix', type=str, required=False,
                     help='Add a suffix to the output file')
-
 
 try:
     args = parser.parse_args()
@@ -117,8 +115,8 @@ if __name__ == '__main__':
                          ', {}{}\n'.format(line[2],
 					 barcoDict[line[0]],
                                          barcoDict[line[1]]))
-        
-	elif args.format == "sabre_se":
+
+        elif args.format == "sabre_se":
             for line in csv_open(args.input_csv):
                 #  Writing in the output while looping at the key dictionary
                 if args.output_suffix is not None:
@@ -165,7 +163,7 @@ if __name__ == '__main__':
 					 	       barcoDict[line[1]]))
 
 
-        elif args.format == "demul_rev":
+        elif args.format == "demulrev":
             for line in csv_open(args.input_csv):
                 #  Writing in the output while looping at the key dictionary
                 of.write('{}'
