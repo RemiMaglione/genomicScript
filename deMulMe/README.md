@@ -7,14 +7,17 @@ DeMulMe is another way to demultiplex your data. It implements two algorithms wr
 2. A dirty python script : [deMulMe.py](https://github.com/RemiMaglione/genomicScript/blob/master/deMulMe/deMulMe.py)
 
 ---
-## Update
+## Update 09.2020
+* Paralelize group of output files per thread instead of piece of raw .fastq files
+---
+## Update 01.2020
+* Shell scripts for a _all-in-one_ command --> [deMulMe.sh](https://github.com/RemiMaglione/genomicScript/blob/master/deMulMe/deMulMe.sh)
+* Fiound a way to parallelize deMulMe in Shell
+---
+## Update 09.2019
 * Full shell commands --> [deMulMe_main.sh](https://github.com/RemiMaglione/genomicScript/blob/master/deMulMe/deMulMe_main.sh)
 * Extract barcodes without calling QiiME --> [trimMe.py](https://github.com/RemiMaglione/genomicScript/blob/master/trimMe/trimMe.py)
 * Parallelize barcodes extraction
----
-## In Progress
-* Shell scripts for a _all-in-one_ command --> [deMulMe.sh](https://github.com/RemiMaglione/genomicScript/blob/master/deMulMe/deMulMe.sh)
-* Find a way to parallelize deMulMe ~~(maybe in R)~~ in Shell
 ---
 ## Future Dev
 * ~~Full shell commands~~
