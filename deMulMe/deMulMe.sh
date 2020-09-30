@@ -147,20 +147,22 @@ wait
 
 echo "seqID Ok"
 
-for splitFile in ${tempName_r1}* ;
+for seqIDfiles in *.fastq.seqID ;
 do
-    for i in *seqID"${splitFile: -2}" ;
-    do echo $i ;
-    done > sabre.sample"${splitFile: -2}"
-
-done
+ echo $seqIDfiles ;
+done > seqID.files
 wait
 
-echo "sample Ok"
+echo "seqID Files Ok"
+
+
+lines_seqIDFiles=$(wc -l seqID.files | cut -d' ' -f1)
+splitMySeqIDFiles=$(echo "(($lines_seqIDFiles / $threadMe) + 1)"|bc)
+split -l ${splitMySeqIDFiles} -d seqID.files seqID.files_
 
 for splitFile in ${tempName_r1}* ;
 do
-    python3 deMulMe.py -i sabre.sample"${splitFile: -2}" -r1 ${cut_file_r1} -r2 ${cut_file_r2} &
+    python3 deMulMe.py -i seqID.files_"${splitFile: -2}" -r1 ${cut_file_r1} -r2 ${cut_file_r2} &
 done
 spinner
 wait
